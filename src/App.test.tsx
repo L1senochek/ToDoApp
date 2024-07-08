@@ -10,6 +10,10 @@ describe('App: ', (): void => {
       await Promise.resolve();
     });
   });
+  it('Renders TodoApp component.', () => {
+    const { getByText } = render(<App />);
+    expect(getByText(/todos/i)).toBeTruthy();
+  });
 });
 
 test('Initial test. Adds 1 + 2 to equal 3.', (): void => {
