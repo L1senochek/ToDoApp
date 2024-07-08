@@ -1,0 +1,40 @@
+.todoinput {
+  display: flex;
+  width: 100%;
+  border: 1px #d6cdc2 solid;
+}
+
+.todoinput__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 0;
+}
+
+.todoinput__btn:focus,
+.todoinput__btn:focus-visible {
+  outline: none;
+}
+
+.todoinput__input {
+  display: flex;
+  flex: 1;
+  border-color: transparent;
+  background-color: transparent;
+  padding: 0 15px;
+  font-style: italic;
+  font-size: 1rem;
+  color: black;
+}
+
+.todoinput__input:focus,
+.todoinput__input:focus-visible {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .todoinput__btn:hover {
+    border-color: transparent;
+  }
+}

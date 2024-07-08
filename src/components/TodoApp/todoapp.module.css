@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .todo__title {
@@ -13,4 +14,6 @@
 .todo__wrapper {
   background-color: #fff;
   border: 1px #d6cdc2 solid;
+  max-width: 600px;
+  width: 100%;
 }
