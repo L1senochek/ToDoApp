@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './todoapp.module.css';
 import TodoInput from '../TodoInput/TodoInput';
 import TodoList from '../TodoList/TodoList';
+import TodoButtonsPanel from '../TodoButtonsPanel/TodoButtonsPanel';
 
 interface ITodo {
   id: number;
@@ -27,8 +28,15 @@ const todoInitialItems = [
   },
 ];
 
+export enum Filter {
+  All = 'all',
+  Active = 'active',
+  Completed = 'completed',
+}
+
 const TodoApp: React.FC = () => {
   const [todos, setTodos] = useState<ITodo[]>(todoInitialItems);
+  const [filter, setFilter] = useState<Filter>(Filter.All);
 
   const addTodo = (text: string) => {
     const newTodo: ITodo = {
@@ -37,7 +45,6 @@ const TodoApp: React.FC = () => {
       completed: false,
     };
     setTodos([...todos, newTodo]);
-    console.log(todos);
   };
 
   const toggleTodo = (id: number) => {
@@ -48,13 +55,30 @@ const TodoApp: React.FC = () => {
     );
   };
 
+  const clearCompletedTodos = () => {
+    const newTodos = todos.filter((todo) => !todo.completed);
+    setTodos(newTodos);
+  };
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === Filter.Active) return !todo.completed;
+    if (filter === Filter.Completed) return todo.completed;
+    return true;
+  });
+
   return (
     <div className={styles.todo}>
       <h1 className={styles.todo__title}>todos</h1>
       <div className={styles.todo__background}>
         <div className={styles.todo__wrapper}>
           <TodoInput addTodo={addTodo} />
-          <TodoList todos={todos} toggleTodo={toggleTodo} />
+          <TodoList todos={filteredTodos} toggleTodo={toggleTodo} />
+          <TodoButtonsPanel
+            todos={todos}
+            filter={filter}
+            setFilter={setFilter}
+            clearCompletedTodos={clearCompletedTodos}
+          />
         </div>
         <div className={styles.todo__wrapper_line_first}></div>
         <div className={styles.todo__wrapper_line_last}></div>

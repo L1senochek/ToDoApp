@@ -14,10 +14,14 @@
   padding: 5px;
   border-radius: 50%;
   border: 1px #d6cdc2 solid;
+  transition: border-color 0.25s;
 }
 
 .todoitem__text {
   text-decoration: none;
+  transition:
+    text-decoration 0.25s,
+    color 0.25s;
 }
 
 .todoitem.completed > .todoitem__text {

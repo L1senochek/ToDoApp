@@ -1,0 +1,43 @@
+.buttonspanel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px #d6cdc2 solid;
+  gap: 15px;
+}
+
+.buttonspanel__count {
+  color: #676767;
+}
+
+.buttonspanel__filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttonspanel__filters > button,
+.buttonspanel__clear {
+  color: #676767;
+  background-color: transparent;
+  padding: 0.3em 0.6em;
+}
+
+.buttonspanel__filters > button.active {
+  border-color: #d0ab9e;
+}
+
+.buttonspanel__filters > button:focus,
+.buttonspanel__filters > button:focus-visible,
+.buttonspanel__clear:focus,
+.buttonspanel__clear:focus-visible {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .buttonspanel__filters > button:hover,
+  .buttonspanel__clear:hover {
+    border-color: #d0ab9e;
+  }
+}
