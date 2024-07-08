@@ -1,4 +1,6 @@
-const todoInitialItems = [
+import { ITodo } from '../../../model/TodoApp/TodoApp';
+
+const todoInitialItems: ITodo[] = [
   {
     id: Date.now() + 1,
     text: 'Тестовое задание',
