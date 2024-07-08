@@ -1,7 +1,7 @@
 .todoinput {
   display: flex;
-  width: 100%;
   border: 1px #d6cdc2 solid;
+  padding: 10px;
 }
 
 .todoinput__btn {
@@ -26,6 +26,7 @@
   font-style: italic;
   font-size: 1rem;
   color: black;
+  border-width: 0;
 }
 
 .todoinput__input:focus,

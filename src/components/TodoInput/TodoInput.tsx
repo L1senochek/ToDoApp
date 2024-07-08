@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import styles from './todoinput.module.css';
 import IconAngle from '../Icons/Angle/Angle';
 
-interface Props {
+interface ITodoInputProps {
   addTodo: (text: string) => void;
 }
 
-const TodoInput: React.FC<Props> = ({ addTodo }) => {
-  const [text, setText] = useState<string>('');
+const TodoInput: React.FC<ITodoInputProps> = ({ addTodo }) => {
+  const [inputText, setInputText] = useState<string>('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (text.trim()) {
-      addTodo(text);
-      setText('');
+    if (inputText.trim()) {
+      addTodo(inputText);
+      setInputText('');
     }
   };
 
@@ -25,8 +25,8 @@ const TodoInput: React.FC<Props> = ({ addTodo }) => {
       <input
         className={styles.todoinput__input}
         type="text"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
         placeholder="What needs to be done?"
       />
     </form>

@@ -1,0 +1,24 @@
+.todoitem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  border: 1px #d6cdc2 solid;
+}
+
+.todoitem__btn {
+  border: 1px #d6cdc2 solid;
+  border-radius: 50%;
+}
+
+.todoitem__text {
+  text-decoration: none;
+}
+
+.todoitem.completed > .todoitem__text {
+  text-decoration: line-through;
+}
+
+.todoitem.completed > .todoitem__btn {
+  border-color: #e0ae72;
+}
