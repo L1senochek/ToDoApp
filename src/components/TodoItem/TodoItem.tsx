@@ -1,21 +1,16 @@
 import React from 'react';
 import styles from './todoitem.module.css';
 import IconCheck from '../Icons/Check/Check';
+import ITodoItemProps from '../../model/TodoItem/TodoItem';
 
-interface ITodoItemProps {
-  todo: {
-    id: number;
-    text: string;
-    completed: boolean;
-  };
-  toggleTodo: (id: number) => void;
-}
-
-const TodoItem: React.FC<ITodoItemProps> = ({ todo, toggleTodo }) => {
+const TodoItem: React.FC<ITodoItemProps> = ({
+  todo,
+  toggleTodo,
+}): JSX.Element => {
   return (
     <li
       className={`${styles.todoitem} ${todo.completed ? styles.completed : ''}`}
-      onClick={() => toggleTodo(todo.id)}
+      onClick={(): void => toggleTodo(todo.id)}
     >
       <button className={styles.todoitem__btn}>
         <IconCheck completed={todo.completed ? true : false} />
