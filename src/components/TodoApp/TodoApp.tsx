@@ -51,9 +51,13 @@ const TodoApp: React.FC = () => {
   return (
     <div className={styles.todo}>
       <h1 className={styles.todo__title}>todos</h1>
-      <div className={styles.todo__wrapper}>
-        <TodoInput addTodo={addTodo} />
-        <TodoList todos={todos} toggleTodo={toggleTodo} />
+      <div className={styles.todo__background}>
+        <div className={styles.todo__wrapper}>
+          <TodoInput addTodo={addTodo} />
+          <TodoList todos={todos} toggleTodo={toggleTodo} />
+        </div>
+        <div className={styles.todo__wrapper_line_first}></div>
+        <div className={styles.todo__wrapper_line_last}></div>
       </div>
     </div>
   );

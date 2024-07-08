@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './todoitem.module.css';
+import IconCheck from '../Icons/Check/Check';
 
 interface ITodoItemProps {
   todo: {
@@ -16,7 +17,9 @@ const TodoItem: React.FC<ITodoItemProps> = ({ todo, toggleTodo }) => {
       className={`${styles.todoitem} ${todo.completed ? styles.completed : ''}`}
       onClick={() => toggleTodo(todo.id)}
     >
-      <button className={styles.todoitem__btn}>\/</button>
+      <button className={styles.todoitem__btn}>
+        <IconCheck completed={todo.completed ? true : false} />
+      </button>
       <span className={styles.todoitem__text}>{todo.text}</span>
     </li>
   );

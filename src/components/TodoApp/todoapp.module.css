@@ -11,10 +11,33 @@
   color: #d0ab9e;
 }
 
+.todo__background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+  max-width: 600px;
+  width: 100%;
+}
+
 .todo__wrapper {
   background-color: #fff;
   border: 1px #d6cdc2 solid;
   max-width: 600px;
   width: 100%;
   box-sizing: border-box;
+}
+
+.todo__wrapper_line_first {
+  background-color: #fff;
+  border: 1px #d6cdc2 solid;
+  width: 98%;
+  height: 5px;
+}
+
+.todo__wrapper_line_last {
+  background-color: #fff;
+  border: 1px #d6cdc2 solid;
+  width: 96%;
+  height: 5px;
 }

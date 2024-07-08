@@ -2,13 +2,18 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 10px;
+  padding: 10px 15px;
   border: 1px #d6cdc2 solid;
+  cursor: pointer;
 }
 
 .todoitem__btn {
-  border: 1px #d6cdc2 solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
   border-radius: 50%;
+  border: 1px #d6cdc2 solid;
 }
 
 .todoitem__text {
@@ -17,8 +22,20 @@
 
 .todoitem.completed > .todoitem__text {
   text-decoration: line-through;
+  color: #8e8e8e;
 }
 
 .todoitem.completed > .todoitem__btn {
-  border-color: #e0ae72;
+  border-color: #8e8e8e;
+}
+
+.todoitem__btn:focus,
+.todoitem__btn:focus-visible {
+  outline: none;
+}
+
+@media (hover: hover) {
+  .todoitem__btn:hover {
+    border-color: #8e8e8e;
+  }
 }
