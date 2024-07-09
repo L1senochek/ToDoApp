@@ -1,8 +1,9 @@
 # ToDoApp
 
-## deploy: 
+## deploy: https://lisenochek-todo-app.netlify.app/
 
-### Тестовое задание Frontend junior в Mindbox 
+### Тестовое задание Frontend junior в Mindbox
+
 Сделайте ToDo-приложение, позволяющее управлять текущим списком дел
 Что должно быть в интерфейсе:
 
@@ -14,6 +15,7 @@
 ![image](https://github.com/L1senochek/ToDoApp/assets/106532861/ffe73e85-2f67-4454-9490-b1051d90cf3d)
 
 Требования к коду:
+
 - Приложение создано с использованием TypeScript, React и React Hooks
 - Библиотеки компонент – на ваше усмотрение
 - Ключевая на ваш взгляд функциональность обязательно покрыта тестами
