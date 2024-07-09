@@ -3,6 +3,12 @@ import styles from './todobuttonspanel.module.css';
 import { ITodoButtonsPanelProps } from '../../model/TodoButtonsPanel/TodoButtonsPanel';
 import { Filter, ITodo } from '../../model/TodoApp/TodoApp';
 
+const filterButtons = [
+  { type: Filter.All, label: 'All' },
+  { type: Filter.Active, label: 'Active' },
+  { type: Filter.Completed, label: 'Completed' },
+];
+
 const TodoButtonsPanel: React.FC<ITodoButtonsPanelProps> = ({
   todos,
   filter,
@@ -19,24 +25,15 @@ const TodoButtonsPanel: React.FC<ITodoButtonsPanelProps> = ({
         {incompleteCount} items left
       </span>
       <div className={styles.buttonspanel__filters}>
-        <button
-          className={filter === Filter.All ? styles.active : ''}
-          onClick={(): void => setFilter(Filter.All)}
-        >
-          All
-        </button>
-        <button
-          className={filter === Filter.Active ? styles.active : ''}
-          onClick={(): void => setFilter(Filter.Active)}
-        >
-          Active
-        </button>
-        <button
-          className={filter === Filter.Completed ? styles.active : ''}
-          onClick={(): void => setFilter(Filter.Completed)}
-        >
-          Completed
-        </button>
+        {filterButtons.map(({ type, label }) => (
+          <button
+            key={type}
+            className={filter === type ? styles.active : ''}
+            onClick={(): void => setFilter(type)}
+          >
+            {label}
+          </button>
+        ))}
       </div>
       <button
         className={styles.buttonspanel__clear}
