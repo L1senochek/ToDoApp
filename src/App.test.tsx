@@ -4,13 +4,14 @@ import App from './App';
 import { ReactElement } from 'react';
 
 describe('App: ', (): void => {
-  it('Renders headline.', async () => {
+  it('- Renders headline.', async () => {
     await act(async (): Promise<void> => {
       render(<App />);
       await Promise.resolve();
     });
   });
-  it('Renders TodoApp component.', () => {
+
+  it('- Renders TodoApp component.', () => {
     const { getByText } = render(<App />);
     expect(getByText(/todos/i)).toBeTruthy();
   });

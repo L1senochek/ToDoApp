@@ -7,20 +7,20 @@ describe('TodoApp: ', (): void => {
     render(<TodoApp />);
   });
 
-  it('Renders initial todos.', (): void => {
+  it('- Renders initial todos.', (): void => {
     expect(screen.getByText(/Тестовое задание/i)).toBeTruthy();
     expect(screen.getByText(/Прекрасный код/i)).toBeTruthy();
     expect(screen.getByText(/Покрытие тестами/i)).toBeTruthy();
   });
 
-  it('Adds a new todo.', (): void => {
+  it('- Adds a new todo.', (): void => {
     const input = screen.getByPlaceholderText(/What needs to be done?/i);
     fireEvent.change(input, { target: { value: 'New Todo' } });
     fireEvent.submit(input);
     expect(screen.getByText(/New Todo/i)).toBeTruthy();
   });
 
-  it('Should filter todos.', (): void => {
+  it('- Should filter todos.', (): void => {
     const allButton = screen.getByText('All');
     const activeButton = screen.getByText('Active');
     const completedButton = screen.getByText('Completed');
@@ -35,7 +35,7 @@ describe('TodoApp: ', (): void => {
     expect(screen.getByText('Тестовое задание')).toBeTruthy();
   });
 
-  it('Clears completed todos.', (): void => {
+  it('- Clears completed todos.', (): void => {
     const clearButton = screen.getByText(/Clear Completed/i);
     fireEvent.click(clearButton);
     expect(screen.queryByText(/Прекрасный код/i)).toBeNull();
