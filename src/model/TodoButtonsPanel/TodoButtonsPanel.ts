@@ -10,3 +10,8 @@ export interface ITodoButtonsPanelProps {
   setFilter: (filter: Filter) => void;
   clearCompletedTodos: () => void;
 }
+
+export type FilterButtons = {
+  type: Filter;
+  label: string;
+};

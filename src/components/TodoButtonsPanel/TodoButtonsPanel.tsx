@@ -1,13 +1,8 @@
 import React from 'react';
 import styles from './todobuttonspanel.module.css';
 import { ITodoButtonsPanelProps } from '../../model/TodoButtonsPanel/TodoButtonsPanel';
-import { Filter, ITodo } from '../../model/TodoApp/TodoApp';
-
-const filterButtons = [
-  { type: Filter.All, label: 'All' },
-  { type: Filter.Active, label: 'Active' },
-  { type: Filter.Completed, label: 'Completed' },
-];
+import { ITodo } from '../../model/TodoApp/TodoApp';
+import filterButtons from './filterButtons/filterButtons';
 
 const TodoButtonsPanel: React.FC<ITodoButtonsPanelProps> = ({
   todos,
